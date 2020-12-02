@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>boardOne</title>
+	</head>
+	<body>
+		<h1>boardOne</h1>
+		
+		<a href="/boardList">목록</a>&nbsp;
+		<a th:href="@{'/modifyBoard/' + ${board.boardId}}">수정</a>&nbsp;
+		<a th:href="@{'/deleteBoard/' + ${board.boardId}}">삭제</a>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>board_id</td>
+					<td th:text="${board.boardId}"></td>
+				</tr>
+				<tr>
+					<td>board_title</td>
+					<td th:text="${board.boardTitle}"></td>
+				</tr>
+				<tr>
+					<td>board_writer</td>
+					<td th:text="${board.boardWriter}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

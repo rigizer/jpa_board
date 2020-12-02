@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>boardList</title>
+	</head>
+	<body>
+		<h1>boardList</h1>
+		
+		<a href="/addBoard">추가</a>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>board_id</th>
+					<th>board_title</th>
+					<th>board_writer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="b, i : ${boardDtoList}">
+					<td th:text="${b.boardId}"></td>
+					<td>
+						<a th:href="@{'/boardOne/' + ${b.boardId}}" th:text="${b.boardTitle}"></a>
+					</td>
+					<td th:text="${b.boardWriter}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

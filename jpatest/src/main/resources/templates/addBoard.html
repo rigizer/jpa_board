@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>addBoard</title>
+	</head>
+	<body>
+		<h1>addBoard</h1>
+		
+		<a href="/boardList">목록</a>
+		<form th:action="@{/addBoard}" method="post">
+			<table border="1" style="text-align: center;">
+				<tr>
+					<td>board_title</td>
+					<td>
+						<input type="text" name="boardTitle">
+					</td>
+				</tr>
+				<tr>
+					<td>board_writer</td>
+					<td>
+						<input type="text" name="boardWriter">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">입력</button></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
